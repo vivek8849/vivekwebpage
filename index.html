@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>VIVEKSITE</title>
+      <style>
+            /* import fonts - Montserrat */
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap');
+
+            * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  font-family: 'Montserrat', sans-serif;
+            }
+
+            html {
+                  font-size: 60%;
+                  /* 1rem = 10px */
+                  overflow-x: hidden;
+            }
+
+            body {
+                  overflow-x: hidden;
+            }
+
+            :root {
+                  --primary-color: #000839;
+                  --primary-shades: #00020b;
+                  --para-color: #80849c;
+                  --helper-color: #1264fa;
+                  --white: #fff;
+            }
+
+            a {
+                  text-decoration: none;
+                  display: inline-block;
+                  color: var(--primary-color);
+            }
+
+            img {
+                  display: inline-block;
+                  width: 100%;
+            }
+
+            li {
+                  list-style: none;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                  color: var(--primary-color);
+            }
+
+            .para {
+                  font-size: 1.6rem;
+                  line-height: 1.7;
+                  font-weight: 400;
+                  color: var(--para-color);
+            }
+
+            /*---------------------------------
+             header and navbar start 
+             ----------------------------------*/
+
+            .header {
+                  /* 9.6 */
+                  height: 6.6rem;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 0 5.4rem;
+                  position: relative;
+                  box-shadow: 0 0 0.8rem rgba(0, 0, 0, .1);
+            }
+
+            .logo {
+                  font-family: 'Baloo 2', cursive;
+                  font-size: 3rem;
+                  font-weight: bold;
+                  letter-spacing: 0.2rem;
+            }
+
+            .navbar {
+                  display: flex;
+                  align-items: center;
+            }
+
+            .navbar-list {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 3.2rem;
+                  font-size: 1.5rem;
+            }
+
+            .navbar-list .navbar-btn {
+                  padding: 1.2rem 2.4rem;
+                  background-color: var(--white);
+                  border: 1px solid var(--helper-color);
+                  color: var(--helper-color);
+                  border-radius: 5rem;
+                  transition: all 0.3s ease-in-out;
+            }
+
+            .navbar-list .navbarlink:hover,
+            .navbar-list .navbarlink:active {
+                  color: var(--helper-color);
+            }
+
+            .navbar .navbar-list .list {
+                  list-style: none;
+                  display: inline-block;
+                  position: relative;
+            }
+
+            .navbar-list .list::after {
+                  content: '';
+                  height: 1px;
+                  width: 0;
+                  background: var(--helper-color);
+                  position: absolute;
+                  left: 0;
+                  bottom: -4px;
+                  transition: 0.5s;
+            }
+
+            .navbar ul li:hover:after {
+                  width: 100%;
+            }
+
+            .navbar-btn:hover,
+            .navbar-btn:active {
+                  background-color: var(--helper-color);
+                  color: var(--white);
+            }
+
+            .navbarlink {
+                  text-transform: uppercase;
+            }
+
+            .mobile-nav-icon {
+                  font-size: 4rem;
+                  color: var(--primary-color);
+            }
+
+            .mobile-navbar-btn {
+                  display: none;
+            }
+
+            .mobile-nav-icon[name="close"] {
+                  display: none;
+            }
+
+            /* resuable code */
+            .section {
+                  padding: 6.6rem 0;
+            }
+
+            .container {
+                  max-width: 130rem;
+                  margin: 0 auto;
+                  padding: 0 3.2rem;
+            }
+
+            .grid {
+                  display: grid;
+                  gap: 9.6rem;
+            }
+
+            .grid-two-column {
+                  grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btn {
+                  font-size: 1.6rem;
+                  text-transform: capitalize;
+                  padding: 1.6rem 3.2rem;
+                  border-radius: 10rem;
+                  background-color: var(--helper-color);
+                  color: var(--white);
+                  transition: all 0.2s linear;
+            }
+
+            .btn:hover,
+            .btn:active {
+                  transform: scale(1.05);
+            }
+
+
+            /*---------------------------------
+             hero section start 
+             ----------------------------------*/
+
+            .section-hero {
+                  position: relative;
+            }
+
+            .section-hero::before {
+                  content: " ";
+                  display: inline-block;
+                  position: absolute;
+                  bottom: 6.6rem;
+                  right: 0;
+                  width: 30%;
+                  height: 50%;
+                  background-color: #e6e6eb;
+                  z-index: -1;
+            }
+
+            .primary-heading {
+                  font-size: 6rem;
+                  font-weight: 700;
+            }
+
+            .section-hero .para {
+                  margin-top: 2rem;
+                  margin-bottom: 3.2rem;
+            }
+
+            .hero-icons {
+                  margin-top: 4.2rem;
+            }
+
+            .hero-icons .icon {
+                  font-size: 6rem;
+                  position: relative;
+            }
+
+            .hero-icons .icon::after {
+                  content: " ";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 60%;
+                  height: 60%;
+                  background-color: var(--helper-color);
+                  border-radius: 50%;
+                  opacity: 0.7;
+            }
+
+            .hero-icons h2 {
+                  font-size: 2rem;
+                  margin-top: 1.5rem;
+                  margin-bottom: 0.8rem;
+            }
+
+            .section-hero .hero-icon-style .para {
+                  line-height: 1.6;
+                  font-size: 1.4rem;
+                  margin: 0;
+            }
+
+            .hero-image {
+                  display: flex;
+                  justify-content: center;
+                  align-items: flex-start;
+                  position: relative;
+            }
+
+            .hero-image img {
+                  height: 90%;
+                  /* box-shadow: 0 0 10rem 0 rgba(0, 0, 0, 0.1); */
+            }
+
+            .hero-image-overlay {
+                  position: absolute;
+                  bottom: 0;
+                  left: -10%;
+                  background-color: var(--primary-color);
+                  padding: 4rem;
+            }
+
+            .hero-image-overlay .para {
+                  color: var(--white);
+            }
+
+            .hero-image-overlay .para:nth-child(2) {
+                  margin: 0;
+                  font-weight: bold;
+            }
+
+            .hero-image-overlay .para:last-child {
+                  margin: 0;
+            }
+
+            /*---------------------------------
+             meadia queries start 
+             ----------------------------------*/
+
+            @media (max-width:1250px) {
+                  .container {
+                        padding: 0 6rem;
+                  }
+
+                  html {
+                        font-size: 55%;
+                  }
+            }
+
+            @media (max-width:980px) {
+
+                  .container {
+                        max-width: 96rem;
+                  }
+
+                  .section-hero .grid-two-column {
+                        grid-template-columns: 1fr;
+                  }
+
+                  .section-hero .hero-icons .grid-two-column {
+                        grid-template-columns: 1fr 1fr;
+                  }
+
+                  .navbar {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100vh;
+                        background: var(--primary-color);
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        transform: translateX(100%);
+                        transition: all 0.3s linear;
+
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: none;
+                  }
+
+                  .navbar .navbar-list {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                  }
+
+                  .navbar .navbarlink {
+                        color: var(--white);
+                  }
+
+                  .mobile-navbar-btn {
+                        display: block;
+                        z-index: 1000;
+                  }
+
+                  .navbar-list .navbar-btn {
+                        background-color: var(--primary-color);
+                        border: 1px solid var(--white);
+                        color: var(--white);
+                  }
+
+                  .navbar-btn:hover,
+                  .navbar-btn:active {
+                        background-color: var(--white);
+                        color: var(--helper-color);
+                  }
+
+                  .active .navbar {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                        transform: translateX(0);
+                        z-index: 999;
+                  }
+
+                  .active .mobile-navbar-btn .mobile-nav-icon[name="close"] {
+                        display: block;
+                        color: var(--white);
+                  }
+
+                  .active .mobile-navbar-btn .mobile-nav-icon[name="menu"] {
+                        display: none;
+                        color: var(--white);
+                  }
+
+                  .section::before {
+                        height: 30%;
+                  }
+
+                  .hero-image img {
+                        width: 60%;
+                  }
+
+                  .hero-image-overlay {
+                        width: 80%;
+                        left: 0;
+                  }
+            }
+
+            @media (max-width:768px) {
+                  .container {
+                        max-width: 720px;
+                  }
+
+                  .hero-image img {
+                        width: 80%;
+                  }
+
+                  .hero-image .hero-image-overlay {
+                        width: 90%;
+                        left: 0;
+                  }
+
+            }
+      </style>
+
+</head>
+
+<body>
+      <header class="header">
+            <a href="#" target="_blank" class="logo">VivekSite</a>
+            <nav class="navbar">
+                  <ul class="navbar-list">
+                        <li class="list"><a href="#" class="navbarlink">Home</a></li>
+                        <li class="list"><a href="#" class="navbarlink">About</a></li>
+                        <li class="list"><a href="#" class="navbarlink">Gallery</a></li>
+                        <li class="list"><a href="#" class="navbarlink">Services</a></li>
+                        <li class="list"><a href="#" class="navbarlink">Contact</a></li>
+                        <li><a href="#" class="btn navbar-btn">Free Code</a></li>
+                  </ul>
+            </nav>
+            <div class="mobile-navbar-btn">
+                  <ion-icon name="menu" class="mobile-nav-icon"></ion-icon>
+                  <ion-icon name="close" class="mobile-nav-icon"></ion-icon>
+            </div>
+      </header>
+
+      <main id="main">
+            <section class="section section-hero">
+                  <div class="container grid grid-two-column">
+                        <div class="hero-data">
+                              <h1 class="primary-heading">Create, Code and Published</h1>
+                              <p class="para">
+                                    Web development is the work involved in developing a website for the Internet (World
+                                    Wide Web) or an intranet (a private network). Web development can range from
+                                    developing a simple single static page of plain text to complex web applications,
+                                    electronic businesses, and social network services.
+                              </p>
+                              <a href="https://www.w3schools.com/REACT/DEFAULT.ASP" target="_blank" class="btn">Get
+                                    Started</a>
+                              <div class="hero-icons">
+                                    <div class="grid grid-two-column">
+                                          <div class="hero-icon-style">
+                                                <ion-icon name="logo-react" class="icon"></ion-icon>
+                                                <h2>React JS</h2>
+                                                <p class="para">
+                                                      React is a JavaScript-based UI development library. Facebook and
+                                                      an open-source developer community run it.
+                                                </p>
+                                          </div>
+                                          <div class="hero-icon-style">
+                                                <ion-icon name="code-slash" class="icon"></ion-icon>
+                                                <h2>Learn Code</h2>
+                                                <p class="para">
+                                                      Backend developers build code that allows a database and an
+                                                      application to communicate with one another.
+                                                </p>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="hero-image">
+                              <img src="img/bg2.jpg" alt="image" class="image">
+                              <div class="hero-image-overlay">
+                                    <p class="para">
+                                          "Coding involves implementing the set of instructions in a form that a machine
+                                          understands and in a way that is optimal. Development is about delivering a
+                                          proper product and maintaining it."
+                                    </p>
+                                    <p class="para">Vivek Sarkheliya</p>
+                                    <p class="para">Mern Stack Developer</p>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+      </main>
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+            const mobile_nav = document.querySelector(".mobile-navbar-btn");
+            const nav_header = document.querySelector(".header");
+
+            const toggleNavbar = () => {
+                  nav_header.classList.toggle("active");
+            };
+
+            mobile_nav.addEventListener("click", () => toggleNavbar());
+      </script>
+</body>
+
+</html>
